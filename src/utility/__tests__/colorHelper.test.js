@@ -27,7 +27,7 @@ describe('colorHelper', () => {
 
                 expect(supportedColors).toContain(currentColor);
                 expect(currentColor).toMatch(
-                    supportedColors[index % supportedColors.length]
+                    supportedColors[index % supportedColors.length],
                 );
             });
         });

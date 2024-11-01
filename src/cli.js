@@ -9,7 +9,7 @@ const argv = require('yargs')
                 describe: "Task to execute. Defaults to 'build'",
                 type: 'string',
             });
-        }
+        },
     )
     .option('config', {
         alias: 'c',
@@ -68,7 +68,7 @@ if (verbose) {
     logDebug(''); // line break
 }
 
-const { result } = concurrently(commands, options)
+const { result } = concurrently(commands, options);
 
 result.then(
     () => {
@@ -76,12 +76,14 @@ result.then(
     },
     (errorResponse) => {
         const commandWithError = errorResponse.find(
-            (closeEvent) => closeEvent.exitCode > 0
+            (closeEvent) => closeEvent.exitCode > 0,
         );
 
         logError('\nOne of tasks returned error');
         if (!commandWithError) {
-            console.warn('Could not resolve command with error from concurrently response.');
+            console.warn(
+                'Could not resolve command with error from concurrently response.',
+            );
 
             process.exit(1);
 
@@ -92,11 +94,13 @@ result.then(
 
         const exitCode = parseInt(commandWithError?.exitCode, 10);
         if (Number.isNaN(exitCode)) {
-            console.warn('Could not extract exit code from command with error.');
+            console.warn(
+                'Could not extract exit code from command with error.',
+            );
 
             process.exit(1);
         } else {
             process.exit(exitCode);
         }
-    }
+    },
 );

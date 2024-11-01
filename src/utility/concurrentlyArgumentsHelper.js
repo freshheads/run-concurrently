@@ -1,5 +1,5 @@
 exports.convertTaskConfigurationToConcurrentlyArguments = function (
-    configForTask
+    configForTask,
 ) {
     const { determineColorForIndex } = require('./colorHelper');
 
@@ -12,7 +12,7 @@ exports.convertTaskConfigurationToConcurrentlyArguments = function (
             const prefixColor = `${determineColorForIndex(index)}.bold`;
 
             return { command, name, prefixColor };
-        }
+        },
     );
 
     const DEFAULT_OPTIONS = {
