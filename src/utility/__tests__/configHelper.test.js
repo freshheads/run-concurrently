@@ -10,7 +10,7 @@ describe('configHelper', () => {
             };
 
             expect(errorCheck).toThrow(
-                'We extract the configuration from the package.json file and expect it to be available from the directory you run this from'
+                'We extract the configuration from the package.json file and expect it to be available from the directory you run this from',
             );
         });
     });
@@ -20,12 +20,12 @@ describe('configHelper', () => {
             const errorCheck = () => {
                 getConfigForTask(
                     'build',
-                    `${cwd}/src/utility/__fixtures__/configWithoutRequiredKey.json`
+                    `${cwd}/src/utility/__fixtures__/configWithoutRequiredKey.json`,
                 );
             };
 
             expect(errorCheck).toThrow(
-                "Expecting there to be a 'concurrentTasks' key in the package.json to extract the configuration from"
+                "Expecting there to be a 'concurrentTasks' key in the package.json to extract the configuration from",
             );
         });
     });
@@ -40,7 +40,7 @@ describe('configHelper', () => {
             };
 
             expect(errorCheck).toThrow(
-                `Missing configuration in config file (${configFilePath}) for '${task}' task`
+                `Missing configuration in config file (${configFilePath}) for '${task}' task`,
             );
         });
     });

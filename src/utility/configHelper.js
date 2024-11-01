@@ -30,7 +30,7 @@ exports.getConfigForTask = function (task, configFilePath) {
 
     if (!configFileExists) {
         throw new Error(
-            `We extract the configuration from the package.json file and expect it to be available from the directory you run this from`
+            `We extract the configuration from the package.json file and expect it to be available from the directory you run this from`,
         );
     }
 
@@ -38,7 +38,7 @@ exports.getConfigForTask = function (task, configFilePath) {
 
     if (typeof packageJsonContent[CONFIG_KEY] === 'undefined') {
         throw new Error(
-            `Expecting there to be a '${CONFIG_KEY}' key in the package.json to extract the configuration from`
+            `Expecting there to be a '${CONFIG_KEY}' key in the package.json to extract the configuration from`,
         );
     }
 
@@ -46,7 +46,7 @@ exports.getConfigForTask = function (task, configFilePath) {
 
     if (typeof config[task] === 'undefined') {
         throw new Error(
-            `Missing configuration in config file (${configFilePath}) for '${task}' task`
+            `Missing configuration in config file (${configFilePath}) for '${task}' task`,
         );
     }
 
