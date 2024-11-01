@@ -22,7 +22,7 @@
         "node": ">=16"
     },
     "bin": {
-        "run-concurrently": "./src/cli.js"
+        "run-concurrently": "src/cli.js"
     },
     "repository": {
         "type": "git",
