@@ -1,5 +1,3 @@
-# `@gnoesiboe/run-concurrently`
-
 Node cli task that uses [`concurrently`](https://www.npmjs.com/package/concurrently) combined with a JSON configuration in `package.json` or separate file, to make concurrent tasks better readable and easier to configure. It for instance can be used to build a project in one command, when it consists of separate individual applications. Within our organisation we use it for starting and maintaining several development servers with one command.
 
 ![alt text](./support/images/screenshot_1.png);
@@ -7,7 +5,7 @@ Node cli task that uses [`concurrently`](https://www.npmjs.com/package/concurren
 ## Installation
 
 ```bash
-npm install --save-dev @gnoesiboe/run-concurrently
+npm install @freshheads/run-concurrently -D
 ```
 
 ## Usage
